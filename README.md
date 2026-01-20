@@ -492,6 +492,10 @@ You will see interfaces like:
 - eth0 → wired / VMware NAT
 - wlan0 → wireless
 
+![Wireshark Home]![WhatsApp Image 2026-01-20 at 9 15 27 AM (2)](https://github.com/user-attachments/assets/8ef8dc13-d6a5-4f8e-a661-9e7c8493c5b2)
+
+
+
 Usually eth0 is active in VMware.
 
 --Click on eth0
@@ -504,6 +508,9 @@ Once you click the interface:
 - Capture starts automatically
 - Packets begin appearing
 
+[Wireshark Home Packets Display] [![WhatsApp Image 2026-01-20 at 9 15 27 AM](https://github.com/user-attachments/assets/97af0927-7e3c-4383-a235-2e4e5f63bb14)
+]
+
 --You are now sniffing your own traffic
 
 ---
@@ -513,6 +520,9 @@ Open Firefox or Browser in kali and visit website like :
 - https://www.gooogle.com
 - https://www.youtube.com
 - https://www.instagram.com
+
+[kali Browser] [![WhatsApp Image 2026-01-20 at 9 25 15 AM](https://github.com/user-attachments/assets/3129cfb3-c6ee-46bb-bdaa-5de8df6047e8)
+]
 
 This creates:
 - DNS traffic
@@ -545,6 +555,9 @@ You will see:
 - Domain names
 - DNS queries and responses
 
+[DNS Traffic] [![WhatsApp Image 2026-01-20 at 9 15 21 AM](https://github.com/user-attachments/assets/e939d53a-59b4-4d7f-8f23-9d2d9e6b974e)
+]
+
 ### Filter TCP Traffic
 
 ---tcp
@@ -554,19 +567,31 @@ Shows:
 - Handshakes
 - Data transfer
 
+[TCP Packets] [![WhatsApp Image 2026-01-20 at 9 15 27 AM (3)](https://github.com/user-attachments/assets/fb276744-b756-4883-bb16-0b4fcf77847c)
+]
+
 ### Filter UDP Traffic
 
 ---udp
 
 Fast, connectionless traffic
 
+[UDP Packets] [![WhatsApp Image 2026-01-20 at 9 15 33 AM (2)](https://github.com/user-attachments/assets/4b053063-dd72-4a4b-a29b-3bd89b914d73)
+]
+
 ### Filter HTTPS Traffic
 --tls
 
 Payload is encrypted → unreadable - Data is encrypted → cannot read content
 
+[TLS (https) packets] [![WhatsApp Image 2026-01-20 at 9 15 33 AM (1)](https://github.com/user-attachments/assets/899b162c-7edf-4640-befb-650ea4218a9a)
+]
+
 ### Filter HTTP (if Avilable)
 ---http
+
+[http packets] [![WhatsApp Image 2026-01-20 at 9 15 27 AM (1)](https://github.com/user-attachments/assets/b1b93d3c-6a81-4814-97de-8871321098cf)
+]
 
 Then:
 Right-click packet → Follow → TCP Stream
@@ -664,5 +689,22 @@ Example:
 - HTTP → username=admin&password=1234
 - HTTPS → x9aF3$@#%… (encrypted)
 
+# File Resources
+saved my kali 
+
+[task Resources] [![WhatsApp Image 2026-01-20 at 9 36 19 AM](https://github.com/user-attachments/assets/a6c10614-25dc-498d-8624-f7e2c1effeee)
+]
+
+---
+
+Conclusion / Task Completion
+
+This task successfully covered the fundamental concepts of networking and provided hands-on experience with network traffic analysis using Kali Linux and Wireshark.
+
+Through this practical work, I learned how data travels across a network, how packets are structured, and how different protocols such as DNS, TCP, UDP, HTTP, and HTTPS operate in real-time environments. By capturing and analyzing live traffic, I was able to clearly observe DNS resolution, TCP three-way handshake, and the difference between encrypted (HTTPS/TLS) and unencrypted (HTTP) communication.
+
+This task also helped me understand the importance of packet sniffing in cyber security, including how attackers and defenders analyze network traffic to detect threats, troubleshoot issues, and investigate incidents. Saving and analyzing PCAP files strengthened my understanding of real-world network behavior.
+
+Overall, this project improved my practical skills, strengthened my theoretical knowledge, and built a solid foundation for cyber security, network analysis, and penetration testing. It also prepared me to confidently explain these concepts in technical interviews.
 
 
