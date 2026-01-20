@@ -11,7 +11,6 @@ network traffic is analyzed from a cyber security perspective.
 ## Tools & Environment
 - **Operating System:** Kali Linux (VMware)
 - **Primary Tool:** Wireshark
-- **Alternative Tools:** tcpdump, Microsoft Network Monitor
 
 ---
 
