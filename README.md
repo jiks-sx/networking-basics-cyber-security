@@ -35,7 +35,6 @@ network traffic is analyzed from a cyber security perspective.
 - Observed TCP three-way handshake
 - Analyzed DNS queries and responses
 - Compared plain-text and encrypted traffic
-- Saved packet capture files for analysis
 
 ---
 
@@ -438,5 +437,232 @@ After completing this task, you can:
 - Answer interview questions confidently
 
 ---
+
+# Now Move on PRACTICAL
+Platform: VMware + Kali Linux
+- Level: Beginner → Intermediate
+- Outcome: Hands-on + Interview-ready
+
+--- 
+
+## STEP 01
+- VMware installed
+- Kali Linux VM running
+- Internet working inside Kali
+    
+-- ping google.com
+If you see replies → internet is working
+
+---
+
+## STEP 02: Update Kali Linux
+Open Terminal and run:
+
+-- sudo apt update
+
+Why?
+- Updates package list
+- Prevents installation errors
+
+---
+
+## STEP 03: Install Wireshark
+--sudo apt install wireshark -y
+
+Important Question During Install
+You will see:
+
+Allow non-superusers to capture packets?
+Select YES
+
+### Why?
+- Safer than running Wireshark as root
+- Follows security best practice
+
+---
+
+## STEP 04
+open Wireshark-Wireshark home screen showing interfaces
+
+---
+
+## STEP 05
+Identify Network Interface
+You will see interfaces like:
+- eth0 → wired / VMware NAT
+- wlan0 → wireless
+
+Usually eth0 is active in VMware.
+
+--Click on eth0
+
+---
+
+## STEP 06: Start Packet Capture
+
+Once you click the interface:
+- Capture starts automatically
+- Packets begin appearing
+
+--You are now sniffing your own traffic
+
+---
+
+## STEP 07: Generate Network Traffic
+Open Firefox or Browser in kali and visit website like :
+- https://www.gooogle.com
+- https://www.youtube.com
+- https://www.instagram.com
+
+This creates:
+- DNS traffic
+- TCP traffic
+- HTTPS traffic
+
+---
+
+## STEP 08: Understand Wireshark Layout
+Wireshark has 3 panels:
+- 1 Packet List – All packets
+- 2️ Packet Details – Layer-wise info
+- 3️ Packet Bytes – Raw data
+
+Click any packet → details appear below.
+
+Showing packets + packet details
+
+---
+
+## STEP 09: Apply Basic Filters
+Filter DNS Traffic
+
+In filter bar:
+
+--dns
+
+
+You will see:
+- Domain names
+- DNS queries and responses
+
+### Filter TCP Traffic
+
+---tcp
+
+Shows:
+- Reliable connections
+- Handshakes
+- Data transfer
+
+### Filter UDP Traffic
+
+---udp
+
+Fast, connectionless traffic
+
+### Filter HTTPS Traffic
+--tls
+
+Payload is encrypted → unreadable - Data is encrypted → cannot read content
+
+### Filter HTTP (if Avilable)
+---http
+
+Then:
+Right-click packet → Follow → TCP Stream
+
+---Data may be readable.
+
+| Purpose           | Filter               |
+| ----------------- | -------------------- |
+| DNS traffic       | `dns`                |
+| TCP packets       | `tcp`                |
+| UDP packets       | `udp`                |
+| TCP handshake     | `tcp.flags.syn == 1` |
+| Encrypted traffic | `tls`                |
+
+
+# STEP 10: Observe TCP Three-Way Handshake
+Apply filter:
+
+---tcp.flags.syn == 1
+
+You will see:
+- SYN
+- SYN-ACK
+- ACK
+
+Click each packet and look at Flags.
+
+---
+
+
+# Interview Questions – Networking & Wireshark
+Q.1. What is TCP Handshake ?
+
+Answer:
+
+TCP three-way handshake is a connection-establishment mechanism that ensures both client and server are ready for reliable data transmission.
+
+Steps:
+- SYN - 
+Client sends SYN packet with initial sequence number.
+
+- SYN-ACK - 
+Server acknowledges client’s SYN and sends its own sequence number.
+
+- ACK - 
+Client acknowledges server’s sequence number.
+
+### Why required?
+- Confirms both devices are reachable
+- Prevents half-open connections
+- Synchronizes sequence numbers
+- Ensures reliable communication
+- Without handshake, data loss and spoofing risks increase.
+
+Q.2. Difference between TCP and UDP ?
+
+Answer :
+
+TCP (Transmission Control Protocol)
+A reliable, connection-oriented protocol that ensures data is delivered correctly and in order.
+
+UDP (User Datagram Protocol)
+A fast, connectionless protocol that sends data without guaranteeing delivery.
+
+| Feature         | TCP                 | UDP            |
+| --------------- | ------------------- | -------------- |
+| Connection Type | Connection-oriented | Connectionless |
+| Reliability     | Reliable            | Unreliable     |
+| Packet Order    | Maintained          | Not maintained |
+| Speed           | Slower              | Faster         |
+| Error Recovery  | Yes                 | No             |
+| Header Size     | Large               | Small          |
+
+TCP is reliable and connection-oriented, ensuring ordered and guaranteed delivery, whereas UDP is fast and connectionless, prioritizing speed over reliability.
+
+Q.3. What is DNS ?
+
+Answer : DNS is a system that translates domain names into IP addresses so computers can locate each other on the internet.
+
+Q.4. What is Packet Sniffing ?
+
+Answer : Packet sniffing is the process of capturing and analyzing network packets to monitor communication or detect security issues.
+
+Q.5. Why is HTTPS more Secure than HTTP ?
+
+Answer : HTTPS is more secure than HTTP because it uses SSL/TLS encryption to ensure confidentiality, integrity, and authentication. This protects data from interception, tampering, and impersonation attacks.
+
+Encryption (Most Important)
+- HTTP sends data in plain text
+- HTTPS encrypts data using SSL/TLS
+
+--Even if an attacker captures packets, they cannot read the data
+
+Example:
+- HTTP → username=admin&password=1234
+- HTTPS → x9aF3$@#%… (encrypted)
+
 
 
