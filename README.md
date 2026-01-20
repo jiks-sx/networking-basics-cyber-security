@@ -621,6 +621,13 @@ Click each packet and look at Flags.
 
 ---
 
+# File Resources
+saved my kali 
+
+[task Resources] [![WhatsApp Image 2026-01-20 at 9 36 19 AM](https://github.com/user-attachments/assets/a6c10614-25dc-498d-8624-f7e2c1effeee)
+]
+
+
 
 # Interview Questions – Networking & Wireshark
 Q.1. What is TCP Handshake ?
@@ -688,12 +695,6 @@ Encryption (Most Important)
 Example:
 - HTTP → username=admin&password=1234
 - HTTPS → x9aF3$@#%… (encrypted)
-
-# File Resources
-saved my kali 
-
-[task Resources] [![WhatsApp Image 2026-01-20 at 9 36 19 AM](https://github.com/user-attachments/assets/a6c10614-25dc-498d-8624-f7e2c1effeee)
-]
 
 ---
 
